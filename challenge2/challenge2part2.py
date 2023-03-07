@@ -19,22 +19,35 @@ def get_prices_input(message):
 
 def problem2_4(message):
     prices = get_prices_input(message)
+
     mostExpensivePrice = 0
 
-    return str(mostExpensivePrice)
+    for i in range(0, len(prices)):
+        if(prices[i] > mostExpensivePrice):
+            mostExpensivePrice = prices[i];
+
+    return str("Most expensive price: " + str(mostExpensivePrice))
 
 
 def problem2_5(message):
     prices = get_prices_input(message)
     totalCost = 0
 
+    for i in range(0, len(prices)):
+        totalCost += prices[i]
 
-    return str(totalCost)
+    return str("Total cost: " + str(totalCost))
 
 
 def problem2_6(message):
     prices = get_prices_input(message)
     totalCost = 0
 
+    for i in range(0, len(prices)):
+        totalCost += prices[i]
 
-    return str(totalCost)
+    totalCost = totalCost * 11.03
+
+    totalCost = round(totalCost)
+
+    return str("Total cost in Kroner: " + str(totalCost))
